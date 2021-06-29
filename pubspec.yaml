@@ -1,5 +1,5 @@
 name: rot13
-description: ROT13 convertion using dart:convert API.
+description: ROT13 conversion using dart:convert library.
 version: 0.0.1
 author: sunaoka <sunaoka@pocari.org>
 homepage: https://github.com/sunaoka/dart-rot13

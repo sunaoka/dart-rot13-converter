@@ -1,6 +1,6 @@
 # dart-rot13
 
-ROT13 convertion using dart:convert API.
+ROT13 conversion using dart:convert library.
 
 ## Usage
 
