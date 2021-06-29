@@ -1,3 +1,5 @@
-.dart_tool
+.dart_tool/
 .packages
+coverage/
+lcov.info
 pubspec.lock
