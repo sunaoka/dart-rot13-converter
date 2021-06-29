@@ -1,6 +1,6 @@
 # rot13_converter
 
-ROT13 converter using dart:convert library.
+ROT13 (rotate by 13 places) converter using dart:convert library.
 
 ## Usage
 
