@@ -1,5 +1,5 @@
 name: rot13_converter
-description: ROT13 converter using dart:convert library.
+description: ROT13 (rotate by 13 places) converter using dart:convert library.
 version: 0.0.2
 homepage: https://github.com/sunaoka/dart-rot13-converter
 
