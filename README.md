@@ -2,6 +2,9 @@
 
 ROT13 (rotate by 13 places) converter using dart:convert library.
 
+[![pub.dev](https://img.shields.io/pub/v/rot13_converter.svg)](https://pub.dev/packages/rot13_converter)
+[![codecov](https://codecov.io/gh/sunaoka/dart-rot13-converter/branch/develop/graph/badge.svg?token=WW2SY9NRV4)](https://codecov.io/gh/sunaoka/dart-rot13-converter)
+
 ## Usage
 
 ```dart
