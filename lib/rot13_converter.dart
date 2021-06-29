@@ -1,4 +1,4 @@
-library rot13;
+library rot13_converter;
 
 import 'dart:convert';
 

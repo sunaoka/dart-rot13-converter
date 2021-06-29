@@ -1,11 +1,11 @@
-# dart-rot13
+# rot13_converter
 
-ROT13 conversion using dart:convert library.
+ROT13 converter using dart:convert library.
 
 ## Usage
 
 ```dart
-import 'package:rot13/rot13.dart';
+import 'package:rot13_converter/rot13_converter.dart';
 
 void main() {
   String plain = 'Why did the chicken cross the road?';

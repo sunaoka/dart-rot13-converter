@@ -1,4 +1,4 @@
-import 'package:rot13/rot13.dart';
+import 'package:rot13_converter/rot13_converter.dart';
 import 'package:test/test.dart';
 
 void main() {
