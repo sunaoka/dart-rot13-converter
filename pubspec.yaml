@@ -1,0 +1,11 @@
+name: rot13
+description: ROT13 conversion using dart:convert library.
+version: 0.0.1
+author: sunaoka <sunaoka@pocari.org>
+homepage: https://github.com/sunaoka/dart-rot13
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dev_dependencies:
+  test: ^1.16.0
