@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         sdk: [stable]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1.3
         with:
           sdk: ${{ matrix.sdk }}
@@ -30,6 +30,7 @@ jobs:
         run: dart run test . --coverage=coverage
       - name: coverage
         run: dart run coverage:format_coverage --lcov --packages=.dart_tool/package_config.json --in coverage --out lcov.info
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v3
         with:
           files: lcov.info
+          fail_ci_if_error: false
