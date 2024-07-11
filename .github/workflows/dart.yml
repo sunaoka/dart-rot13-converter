@@ -17,9 +17,9 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
-        sdk: [ '2.12', stable ]
+        sdk: [ stable@2, stable ]
 
-    name: OS ${{ matrix.os }} - SDK ${{ matrix.sdk }}
+    name: ${{ matrix.os }} - ${{ matrix.sdk }}
 
     steps:
       - name: checkout
