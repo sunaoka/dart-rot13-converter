@@ -1,0 +1,56 @@
+name: Dart
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+  push:
+    branches: [ develop ]
+
+  schedule:
+    - cron: '23 1 * * *'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        sdk: [ '2.12.0', stable ]
+        exclude:
+          - os: macos-latest
+            sdk: '2.12.0'
+
+    name: ${{ matrix.os }} - ${{ matrix.sdk }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ matrix.sdk }}
+
+      - name: install dependencies
+        run: dart pub get
+
+      - name: dart format
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: analyzer
+        run: dart analyze --fatal-infos --fatal-warnings .
+
+      - name: run test
+        run: dart run test . --coverage=coverage
+
+      - name: coverage
+        run: dart run coverage:format_coverage --lcov --packages=.dart_tool/package_config.json --in coverage --out lcov.info
+
+      - uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: lcov.info
+          fail_ci_if_error: false
+        if: matrix.os == 'ubuntu-latest' && matrix.sdk == 'stable'
